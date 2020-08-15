@@ -27,7 +27,7 @@
 
 - どのステージでも主人公(操作するキャラ)は[やきう民](https://bowlroll.net/file/67850)で固定してください。
 
-- 「[やきう民](https://bowlroll.net/file/67850)」の変換済みモデルは/Assets/Scenes/Common/Models/やきう民/にありますので、それを使用してください。
+- 「[やきう民](https://bowlroll.net/file/67850)」の変換済みモデルは/Assets/Scenes/Common/Models/やきう民/にありますので、そのモデルを使用してください。
 
 ## シーンごとの編集者
 | シーン名 | 編集者(GitHubのユーザー名) | 備考 |
