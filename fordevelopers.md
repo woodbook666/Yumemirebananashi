@@ -3,7 +3,7 @@
 - GitHub Flowを使用して開発して下さい。  
   ![GitHub Flowの解説画像](https://raw.githubusercontent.com/NanJ-Programming-Team/Yumemirebananashi/master/Images/GitHub-Flow.png)
 
-- 開発に使用するUnityのバージョンはver.**2020.1.2f1**を使用して下さい。
+- ver.**2020.1.2f1**のUnityを開発に使用して下さい。
 
 - 開発を始める前に[Stereoarts Homepage](http://stereoarts.jp/)から「MMD4Mecanim_Beta_yyyymmdd.zip」(「yyyymmdd」の部分は日付です)をダウンロードし、  
   解凍したファイルの中から「MMD4Mecanim.unitypackage」を/Assets/直下にインポートして下さい。
