@@ -1,17 +1,11 @@
 # 開発者の方々へ
 
+## 開発時の注意事項
+
 - GitHub Flowを使用して開発してください。  
   ![GitHub Flowの解説画像](https://raw.githubusercontent.com/NanJ-Programming-Team/Yumemirebananashi/master/Images/GitHub-Flow.png)
 
 - ver.**2020.1.2f1**のUnityを開発に使用してください。
-
-- 開発を始める前に[Stereoarts Homepage](http://stereoarts.jp/)から「MMD4Mecanim_Beta_yyyymmdd.zip」(「yyyymmdd」の部分は日付です)をダウンロードし、  
-  解凍したファイルの中から「MMD4Mecanim.unitypackage」を/Assets/直下にインポートしてください。
-
-- 開発を始める前に「[やきう民](https://bowlroll.net/file/67850)」を/Assets/Scenes/Common/Models/に配置し、  
-  MMD4Mecanimを使用して変換しHumanoid属性を付与してください。  
-  必要であればモーション等も追加で付与していただいて構いません。  
-  「[やきう民](https://bowlroll.net/file/67850)」のモデルを使用する際には必ずこのモデルを使用してください。
 
 - Assetは/Assets/直下にインポートしてください。
 
@@ -31,6 +25,16 @@
 - プロジェクトの設定や.gitignoreは変更しないでください。
 
 - どのステージでも主人公(操作するキャラ)は[やきう民](https://bowlroll.net/file/67850)で固定してください。
+
+## 開発を始める前に
+
+- [Stereoarts Homepage](http://stereoarts.jp/)から「MMD4Mecanim_Beta_yyyymmdd.zip」(「yyyymmdd」の部分は日付です)をダウンロードし、  
+  解凍したファイルの中から「MMD4Mecanim.unitypackage」を/Assets/直下にインポートしてください。
+
+- 「[やきう民](https://bowlroll.net/file/67850)」を/Assets/Scenes/Common/Models/に配置し、  
+  MMD4Mecanimを使用して変換しHumanoid属性を付与してください。  
+  必要であればモーション等も追加で付与していただいて構いません。  
+  「[やきう民](https://bowlroll.net/file/67850)」のモデルを使用する際には必ずこのモデルを使用してください。
 
 ## シーンごとの編集者
 | シーン名 | 編集者(GitHubのユーザー名) | 備考 |
