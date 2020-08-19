@@ -1,7 +1,5 @@
 # 開発者の方々へ
-
 ## 開発時の注意事項
-
 - GitHub Flowを使用して開発してください。  
   ![GitHub Flowの解説画像](https://raw.githubusercontent.com/NanJ-Programming-Team/Yumemirebananashi/master/Images/GitHub-Flow.png)
 
@@ -27,7 +25,6 @@
 - どのステージでも主人公(操作するキャラ)は「[やきう民](https://bowlroll.net/file/67850)」で固定してください。
 
 ## 開発を始める前に
-
 - [Stereoarts Homepage](http://stereoarts.jp/)から「MMD4Mecanim_Beta_yyyymmdd.zip」(「yyyymmdd」の部分は日付です)をダウンロードし、  
   解凍したファイルの中から「MMD4Mecanim.unitypackage」を/Assets/直下にインポートしてください。
 
