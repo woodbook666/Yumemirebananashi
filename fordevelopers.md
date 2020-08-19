@@ -8,6 +8,11 @@
 - 開発を始める前に[Stereoarts Homepage](http://stereoarts.jp/)から「MMD4Mecanim_Beta_yyyymmdd.zip」(「yyyymmdd」の部分は日付です)をダウンロードし、  
   解凍したファイルの中から「MMD4Mecanim.unitypackage」を/Assets/直下にインポートしてください。
 
+- 開発を始める前に「[やきう民](https://bowlroll.net/file/67850)」を/Assets/Scenes/Common/Models/に配置し、  
+  MMD4Mecanimを使用して変換しHumanoid属性を付与してください。  
+  必要であればモーション等も追加で付与していただいて構いません。  
+  「[やきう民](https://bowlroll.net/file/67850)」のモデルを使用する際には必ずこのモデルを使用してください。
+
 - Assetは/Assets/直下にインポートしてください。
 
 - シーンを追加する場合、/Assets/Scenes/にシーン名でフォルダを作り、作成したフォルダの中にシーンを作成してください。  
@@ -26,8 +31,6 @@
 - プロジェクトの設定や.gitignoreは変更しないでください。
 
 - どのステージでも主人公(操作するキャラ)は[やきう民](https://bowlroll.net/file/67850)で固定してください。
-
-- 「[やきう民](https://bowlroll.net/file/67850)」の変換済みモデルは/Assets/Scenes/Common/Models/やきう民/にありますので、そのモデルを使用してください。
 
 ## シーンごとの編集者
 | シーン名 | 編集者(GitHubのユーザー名) | 備考 |
