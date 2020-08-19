@@ -24,7 +24,7 @@
 
 - プロジェクトの設定や.gitignoreは変更しないでください。
 
-- どのステージでも主人公(操作するキャラ)は[やきう民](https://bowlroll.net/file/67850)で固定してください。
+- どのステージでも主人公(操作するキャラ)は「[やきう民](https://bowlroll.net/file/67850)」で固定してください。
 
 ## 開発を始める前に
 
@@ -39,4 +39,4 @@
 ## シーンごとの編集者
 | シーン名 | 編集者(GitHubのユーザー名) | 備考 |
 ----|----|----
-| Stage 1 | [ReNeeter](https://github.com/ReNeeter) | ステージのテーマ:未定 |
+| Stage 1 | [ReNeeter](https://github.com/ReNeeter) | ステージのテーマ:ハセカラ騒動 |
