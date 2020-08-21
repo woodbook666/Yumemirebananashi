@@ -12,7 +12,7 @@ PlayerSettings:
   targetDevice: 2
   useOnDemandResources: 0
   accelerometerFrequency: 60
-  companyName: DefaultCompany
+  companyName: NanJ-Programming-Team
   productName: "\u5922\u898B\u308C\u3070\u540D\u7121\u3057"
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
