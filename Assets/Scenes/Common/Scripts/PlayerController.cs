@@ -5,9 +5,9 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     // 移動スピード
-    float speed = 15.0f;
+    [SerializeField] float speed = 15.0f;
     // ジャンプ力
-    float jumpForce = 250.0f;
+    [SerializeField] float jumpForce = 250.0f;
 
     // Rigidbody
     Rigidbody rb;
