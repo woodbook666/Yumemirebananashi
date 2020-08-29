@@ -388,13 +388,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: -10}
+  m_LocalRotation: {x: 0.19509031, y: 0, z: 0, w: 0.98078537}
+  m_LocalPosition: {x: 0, y: 3, z: -3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 22.5, y: 0, z: 0}
 --- !u!114 &963194229
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -407,8 +407,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f5e90f4c4c3d174e842d40f142ad9df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 3
-  cameraVec: {x: 0, y: 1.5, z: -3.5}
 --- !u!1001 &980015123
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3106,8 +3104,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59b6669195a1153428b934aa43b2a02d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
-  jumpForce: 250
 --- !u!21 &1111253353
 Material:
   serializedVersion: 6
