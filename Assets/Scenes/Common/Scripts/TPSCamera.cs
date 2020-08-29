@@ -5,8 +5,8 @@ using UnityEngine;
 public class TPSCamera : MonoBehaviour
 {
     // カメラの移動速度
-    [SerializeField] float speed = 3.0f;
-    [SerializeField] Vector3 cameraVec = new Vector3(0.0f, 1.5f, -3.5f);
+    float speed = 3.0f;
+    Vector3 cameraVec = new Vector3(0.0f, 1.5f, -3.5f);
     // やきう民のオブジェクト
     GameObject playerObj;
 
