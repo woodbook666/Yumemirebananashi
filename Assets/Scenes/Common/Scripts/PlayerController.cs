@@ -14,14 +14,10 @@ public class PlayerController : MonoBehaviour
     // Animator
     Animator animator;
 
-    // 現在位置
-    Vector3 playerPosition;
     // 今の状態
     int state;
     // 少し前の状態
     int prevState;
-    // 回転バグが発生しているかどうか
-    bool bugstate;
     // 地面に接触してるか
     bool ground = true;
     // キーが押されているか
@@ -34,8 +30,6 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         // Animatorを取得
         animator = GetComponent<Animator>();
-        // 現在位置を取得
-        playerPosition = transform.position;
     }
 
     // Update is called once per frame
@@ -53,7 +47,6 @@ public class PlayerController : MonoBehaviour
 
         // 今の状態を取得
         // stateが0なら待機状態、1なら走っている、2ならジャンプ中
-        // bugstateがtrueなら回転バグ発生中
         if (ground)
         {
             if (!pushKey)
@@ -64,20 +57,10 @@ public class PlayerController : MonoBehaviour
             {
                 state = 1;
             }
-
-            bugstate = false;
         }
         else
         {
             state = 2;
-            if (!pushKey)
-            {
-                bugstate = true;
-            }
-            else
-            {
-                bugstate = false;
-            }
         }
 
         // 今の状態が少し前の状態と変化していたらアニメーションを変える
@@ -113,16 +96,6 @@ public class PlayerController : MonoBehaviour
             ground = false;
         }
         rb.MovePosition(transform.position + new Vector3(Input.GetAxisRaw("Horizontal") * Time.deltaTime * speed, 0, Input.GetAxisRaw("Vertical") * Time.deltaTime * speed));
-
-        // 方向転換
-        Vector3 direction = transform.position - playerPosition;
-        if (direction.magnitude >= 0.01f && bugstate != true)
-        {
-            transform.rotation = Quaternion.LookRotation(new Vector3(direction.x, 0, direction.z));
-        }
-
-        // 現在位置を更新
-        playerPosition = transform.position;
     }
 
     // ジャンプ後地面に接触したか判定
