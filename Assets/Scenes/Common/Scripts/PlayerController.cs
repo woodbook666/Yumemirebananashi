@@ -20,6 +20,8 @@ public class PlayerController : MonoBehaviour
     int state;
     // 少し前の状態
     int prevState;
+    // 回転バグが発生しているかどうか
+    bool bugstate;
     // 地面に接触してるか
     bool ground = true;
     // キーが押されているか
@@ -51,6 +53,7 @@ public class PlayerController : MonoBehaviour
 
         // 今の状態を取得
         // stateが0なら待機状態、1なら走っている、2ならジャンプ中
+        // bugstateがtrueなら回転バグ発生中
         if (ground)
         {
             if (!pushKey)
@@ -61,10 +64,20 @@ public class PlayerController : MonoBehaviour
             {
                 state = 1;
             }
+
+            bugstate = false;
         }
         else
         {
             state = 2;
+            if (!pushKey)
+            {
+                bugstate = true;
+            }
+            else
+            {
+                bugstate = false;
+            }
         }
 
         // 今の状態が少し前の状態と変化していたらアニメーションを変える
@@ -103,7 +116,7 @@ public class PlayerController : MonoBehaviour
 
         // 方向転換
         Vector3 direction = transform.position - playerPosition;
-        if (direction.magnitude >= 0.01f)
+        if (direction.magnitude >= 0.01f && bugstate != true)
         {
             transform.rotation = Quaternion.LookRotation(new Vector3(direction.x, 0, direction.z));
         }
