@@ -20,8 +20,6 @@ public class PlayerController : MonoBehaviour
     int prevState;
     // 地面に接触してるか
     bool ground = true;
-    // キーが押されているか
-    bool pushKey = false;
 
     // Start is called before the first frame update
     void Start()
@@ -35,27 +33,17 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // キーが押されているか判定
-        if (Input.GetAxisRaw("Horizontal") != 0 || Input.GetAxisRaw("Vertical") != 0)
-        {
-            pushKey = true;
-        }
-        else
-        {
-            pushKey = false;
-        }
-
         // 今の状態を取得
         // stateが0なら待機状態、1なら走っている、2ならジャンプ中
         if (ground)
         {
-            if (!pushKey)
+            if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D))
             {
-                state = 0;
+                state = 1;
             }
             else
             {
-                state = 1;
+                state = 0;
             }
         }
         else
@@ -90,12 +78,28 @@ public class PlayerController : MonoBehaviour
         }
 
         // 入力されたキーに合わせてモデルを動かす
-        if (ground && Input.GetButton("Jump"))
+        if (ground && Input.GetKey(KeyCode.Space))
         {
             rb.AddForce(transform.up * jumpForce);
             ground = false;
         }
-        rb.MovePosition(transform.position + new Vector3(Input.GetAxisRaw("Horizontal") * Time.deltaTime * speed, 0, Input.GetAxisRaw("Vertical") * Time.deltaTime * speed));
+
+        if (Input.GetKey(KeyCode.W))
+        {
+            rb.MovePosition(transform.position + transform.forward * Time.deltaTime * speed);
+        }
+        if (Input.GetKey(KeyCode.A))
+        {
+            rb.MovePosition(transform.position + -transform.right * Time.deltaTime * speed);
+        }
+        if (Input.GetKey(KeyCode.S))
+        {
+            rb.MovePosition(transform.position + -transform.forward * Time.deltaTime * speed);
+        }
+        if (Input.GetKey(KeyCode.D))
+        {
+            rb.MovePosition(transform.position + transform.right * Time.deltaTime * speed);
+        }
     }
 
     // ジャンプ後地面に接触したか判定
