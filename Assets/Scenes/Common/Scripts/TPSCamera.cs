@@ -19,6 +19,8 @@ public class TPSCamera : MonoBehaviour
     {
         // やきう民のTransformを取得
         playerTrans = GameObject.Find("YakiuMin_ver1.0.0").transform;
+        // カーソルを非表示にする
+        Cursor.visible = false;
     }
 
     // Update is called once per frame
