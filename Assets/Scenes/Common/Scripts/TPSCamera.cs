@@ -31,14 +31,14 @@ public class TPSCamera : MonoBehaviour
         xMouse +=  Input.GetAxis("Mouse X") * rotateSpeed;
         yMouse -= Input.GetAxis("Mouse Y") * rotateSpeed;
 
-        // 縦回転を制限
-        yMouse = Mathf.Clamp(yMouse, -80, 50);
+        // 縦回転を制限(制限角度より+22.5fしたオイラー角)
+        yMouse = Mathf.Clamp(yMouse, -57.5f, 72.5f);
         // マウスの動きに合わせてプレイヤーを横回転
         playerTrans.eulerAngles = new Vector3(0.0f, xMouse, 0.0f);
         // カメラから見たプレイヤーの方向を算出
         Quaternion playerRotate = Quaternion.LookRotation(playerTrans.position - transform.position);
         // マウスの動きに合わせてカメラを縦回転させプレイヤーの方向に向かせる
-        transform.eulerAngles = new Vector3(yMouse, 0.0f, 0.0f) + playerRotate.eulerAngles;
+        transform.eulerAngles = new Vector3(yMouse - 22.5f, 0.0f, 0.0f) + playerRotate.eulerAngles;
 
         // マウスホイールの動きを取得
         float mouseWheelMove = Input.GetAxis("Mouse ScrollWheel");
