@@ -3,7 +3,7 @@
 - GitHub Flowを使用して開発してください。  
   ![GitHub Flowの解説画像](https://raw.githubusercontent.com/NanJ-Programming-Team/Yumemirebananashi/master/Images/GitHub-Flow.png)
 
-- ver.**2020.1.3f1**のUnityを開発に使用してください。
+- ver.**2020.1.4f1**のUnityを開発に使用してください。
 
 - Assetは/Assets/直下にインポートしてください。
 
