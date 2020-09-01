@@ -15,7 +15,7 @@ jobs:
   # This workflow contains a single job called "build"
   build:
     # The type of runner that the job will run on
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
@@ -43,17 +43,24 @@ jobs:
           #name: Test results
           #path: artifacts
 
+      # Install IL2CPP
+      - name: Install IL2CPP
+        uses: crazy-max/ghaction-chocolatey@v1
+        with:
+          args: install -y unity-win-il2cpp
+
       # Build project
       - name: Build project
         uses: webbertakken/unity-builder@v1.2
         with:
           unityVersion: 2020.1.3f1
           targetPlatform: StandaloneWindows64
+          buildMethod: BuildClass.Winx64LZ4HCBuild
           customParameters: -nographics
 
       # Upload build artifacts
       - name: Upload build artifacts
         uses: actions/upload-artifact@v2
         with:
-          name: Build artifacts(Windows x64, No Compress)
+          name: Build artifacts(Windows x64)
           path: build
