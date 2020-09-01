@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    // 移動スピード
-    float speed = 5.0f;
+    // 移動速度
+    float moveSpeed = 5.0f;
     // ジャンプ力
     float jumpForce = 250.0f;
 
@@ -13,12 +13,11 @@ public class PlayerController : MonoBehaviour
     Rigidbody rb;
     // Animator
     Animator animator;
-
     // 今の状態
     int state;
     // 少し前の状態
     int prevState;
-    // 地面に接触してるか
+    // 地面に接触しているか
     bool ground = true;
 
     // Start is called before the first frame update
@@ -51,7 +50,7 @@ public class PlayerController : MonoBehaviour
             state = 2;
         }
 
-        // 今の状態が少し前の状態と変化していたらアニメーションを変える
+        // 今の状態が少し前の状態から変化していたらアニメーションを変更
         if (prevState != state)
         {
             switch (state)
@@ -77,7 +76,7 @@ public class PlayerController : MonoBehaviour
             prevState = state;
         }
 
-        // 入力されたキーに合わせてモデルを動かす
+        // 入力されたキーに合わせて動かす
         if (ground && Input.GetKey(KeyCode.Space))
         {
             rb.AddForce(transform.up * jumpForce);
@@ -86,19 +85,19 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetKey(KeyCode.W))
         {
-            rb.MovePosition(transform.position + transform.forward * Time.deltaTime * speed);
+            rb.MovePosition(transform.position + transform.forward * Time.deltaTime * moveSpeed);
         }
         if (Input.GetKey(KeyCode.A))
         {
-            rb.MovePosition(transform.position + -transform.right * Time.deltaTime * speed);
+            rb.MovePosition(transform.position + -transform.right * Time.deltaTime * moveSpeed);
         }
         if (Input.GetKey(KeyCode.S))
         {
-            rb.MovePosition(transform.position + -transform.forward * Time.deltaTime * speed);
+            rb.MovePosition(transform.position + -transform.forward * Time.deltaTime * moveSpeed);
         }
         if (Input.GetKey(KeyCode.D))
         {
-            rb.MovePosition(transform.position + transform.right * Time.deltaTime * speed);
+            rb.MovePosition(transform.position + transform.right * Time.deltaTime * moveSpeed);
         }
     }
 
