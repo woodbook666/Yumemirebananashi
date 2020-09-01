@@ -31,17 +31,17 @@ jobs:
           key: Library-cache-key
 
       # Run tests
-      - name: Run tests
-        uses: webbertakken/unity-test-runner@v1.6
-        with:
-          unityVersion: 2020.1.3f1
+      #- name: Run tests
+        #uses: webbertakken/unity-test-runner@v1.6
+        #with:
+          #unityVersion: 2020.1.3f1
 
       # Upload test results
-      - name: Upload test results
-        uses: actions/upload-artifact@v2
-        with:
-          name: Test results
-          path: artifacts
+      #- name: Upload test results
+        #uses: actions/upload-artifact@v2
+        #with:
+          #name: Test results
+          #path: artifacts
 
       # Build project
       - name: Build project
