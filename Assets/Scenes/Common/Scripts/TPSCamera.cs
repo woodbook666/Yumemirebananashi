@@ -1,11 +1,9 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class TPSCamera : MonoBehaviour
 {
-    // 回転速度
-    float rotateSpeed = 3.0f;
+    // 回転速度(マウスの感度)
+    float rotateSpeed;
     // ズーム速度
     float zoomSpeed = 1.0f;
 
@@ -18,6 +16,8 @@ public class TPSCamera : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        // 回転速度(マウスの感度)を取得
+        rotateSpeed = PlayerPrefs.GetFloat("mouseSensitivity", 3);
         // プレイヤーのTransformを取得
         playerTrans = GameObject.Find("YakiuMin_ver1.0.0").transform;
         // マウスカーソルを非表示に
