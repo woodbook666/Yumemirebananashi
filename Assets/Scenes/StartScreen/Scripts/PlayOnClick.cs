@@ -3,7 +3,7 @@
 public class PlayOnClick : MonoBehaviour
 {
     // カメラの回転速度
-    float camRotatespeed = 5.0f;
+    float camRotatespeed = 5;
 
     // カメラのTransform
     Transform camTrans;
@@ -29,7 +29,7 @@ public class PlayOnClick : MonoBehaviour
         // ボタンが押されたらカメラを90°回転させる
         if (isPressed)
         {
-            camTrans.rotation = Quaternion.Slerp(camTrans.rotation, Quaternion.Euler(0.0f, 90.0f, 0.0f), Time.deltaTime * camRotatespeed);
+            camTrans.rotation = Quaternion.Slerp(camTrans.rotation, Quaternion.Euler(0, 90, 0), Time.deltaTime * camRotatespeed);
 
             // 回転終了を検知
             if (camVecY >= 88.5f && camVecY <= 91.5f)

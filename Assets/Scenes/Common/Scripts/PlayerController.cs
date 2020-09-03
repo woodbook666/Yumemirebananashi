@@ -1,16 +1,21 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
     // 移動速度
-    float moveSpeed = 5.0f;
+    float moveSpeed = 5;
     // ジャンプ力
-    float jumpForce = 250.0f;
+    float jumpForce = 250;
 
     // Rigidbody
     Rigidbody rb;
     // Animator
     Animator animator;
+    // メインカメラ
+    Camera mainCamera;
+    // サブカメラ
+    Camera subCamera;
     // 今の状態
     int state;
     // 少し前の状態
@@ -25,6 +30,12 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         // Animatorを取得
         animator = GetComponent<Animator>();
+        // メインカメラを取得
+        mainCamera = Camera.main;
+        // サブカメラを取得
+        subCamera = GameObject.Find("Sub Camera").GetComponent<Camera>();
+        // マウスカーソルを非表示
+        Cursor.visible = false;
     }
 
     // Update is called once per frame
@@ -96,6 +107,20 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKey(KeyCode.D))
         {
             rb.MovePosition(transform.position + transform.right * Time.deltaTime * moveSpeed);
+        }
+
+        if (Input.GetKeyDown(KeyCode.C))
+        {
+            if (mainCamera.enabled)
+            {
+                mainCamera.enabled = false;
+                subCamera.enabled = true;
+            }
+            else
+            {
+                subCamera.enabled = false;
+                mainCamera.enabled = true;
+            }
         }
     }
 

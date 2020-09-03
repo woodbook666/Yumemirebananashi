@@ -5,7 +5,7 @@ public class TPSCamera : MonoBehaviour
     // 回転速度(マウスの感度)
     float rotateSpeed;
     // ズーム速度
-    float zoomSpeed = 1.0f;
+    float zoomSpeed = 1;
 
     // プレイヤーのTransform
     Transform playerTrans;
@@ -20,8 +20,6 @@ public class TPSCamera : MonoBehaviour
         rotateSpeed = PlayerPrefs.GetFloat("mouseSensitivity", 3);
         // プレイヤーのTransformを取得
         playerTrans = GameObject.Find("YakiuMin_ver1.0.0").transform;
-        // マウスカーソルを非表示に
-        Cursor.visible = false;
     }
 
     // Update is called once per frame
@@ -34,11 +32,11 @@ public class TPSCamera : MonoBehaviour
         // 縦回転を制限(制限角度より+22.5fしたオイラー角)
         yMouse = Mathf.Clamp(yMouse, -57.5f, 72.5f);
         // マウスの動きに合わせてプレイヤーを横回転
-        playerTrans.eulerAngles = new Vector3(0.0f, xMouse, 0.0f);
+        playerTrans.eulerAngles = new Vector3(0, xMouse, 0);
         // カメラから見たプレイヤーの方向を算出
         Quaternion playerRotate = Quaternion.LookRotation(playerTrans.position - transform.position);
         // マウスの動きに合わせてカメラを縦回転させプレイヤーの方向に向かせる
-        transform.eulerAngles = new Vector3(yMouse - 22.5f, 0.0f, 0.0f) + playerRotate.eulerAngles;
+        transform.eulerAngles = new Vector3(yMouse - 22.5f, 0, 0) + playerRotate.eulerAngles;
 
         // マウスホイールの動きを取得
         float mouseWheelMove = Input.GetAxis("Mouse ScrollWheel");
