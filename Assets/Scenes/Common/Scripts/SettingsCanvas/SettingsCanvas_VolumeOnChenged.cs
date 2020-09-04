@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 
-public class VolumeOnChenged : MonoBehaviour
+public class SettingsCanvas_VolumeOnChenged : MonoBehaviour
 {
     // Slider
     Slider volumeSlider;
@@ -18,7 +18,7 @@ public class VolumeOnChenged : MonoBehaviour
         }
     }
 
-    // スライダーを変更時の処理
+    // Sliderを変更時の処理
     public void OnChenged()
     {
         PlayerPrefs.SetFloat("volume", volumeSlider.value);

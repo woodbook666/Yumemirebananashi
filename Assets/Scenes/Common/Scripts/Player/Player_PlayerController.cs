@@ -1,7 +1,6 @@
 ﻿using UnityEngine;
-using UnityEngine.UI;
 
-public class PlayerController : MonoBehaviour
+public class Player_PlayerController : MonoBehaviour
 {
     // 移動速度
     float moveSpeed = 5;
@@ -12,9 +11,9 @@ public class PlayerController : MonoBehaviour
     Rigidbody rb;
     // Animator
     Animator animator;
-    // メインカメラ
+    // メインカメラ(TPS)
     Camera mainCamera;
-    // サブカメラ
+    // サブカメラ(FPS)
     Camera subCamera;
     // 今の状態
     int state;
@@ -36,6 +35,12 @@ public class PlayerController : MonoBehaviour
         subCamera = GameObject.Find("Sub Camera").GetComponent<Camera>();
         // マウスカーソルを非表示
         Cursor.visible = false;
+        // カメラの状態を復元
+        if (PlayerPrefs.GetInt("enabledFPSCamera", 0) == 1)
+        {
+            mainCamera.enabled = false;
+            subCamera.enabled = true;
+        }
     }
 
     // Update is called once per frame
@@ -85,7 +90,7 @@ public class PlayerController : MonoBehaviour
             prevState = state;
         }
 
-        // 入力されたキーに合わせて動かす
+        // 入力されたキーに合わせて動作
         if (ground && Input.GetKey(KeyCode.Space))
         {
             rb.AddForce(transform.up * jumpForce);
@@ -115,12 +120,21 @@ public class PlayerController : MonoBehaviour
             {
                 mainCamera.enabled = false;
                 subCamera.enabled = true;
+                PlayerPrefs.SetInt("enabledFPSCamera", 1);
             }
             else
             {
                 subCamera.enabled = false;
                 mainCamera.enabled = true;
+                PlayerPrefs.SetInt("enabledFPSCamera", 0);
             }
+        }
+
+        if (Input.GetKeyDown(KeyCode.Escape) && GameObject.Find("PauseCanvas(Clone)") == null && GameObject.Find("SettingsCanvas(Clone)") == null)
+        {
+            Cursor.visible = true;
+            Instantiate(Resources.Load("PauseCanvas"));
+            GameObject.Find("PauseResume").GetComponent<Player_PauseResume>().Pause(rb, animator);
         }
     }
 

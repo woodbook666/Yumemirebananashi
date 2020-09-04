@@ -1,13 +1,13 @@
 ﻿using UnityEngine;
 
-public class FPSCamera : MonoBehaviour
+public class Player_FPSCamera : MonoBehaviour
 {
     // 回転速度(マウスの感度)
     float rotateSpeed;
 
     // プレイヤーのTransform
     Transform playerTrans;
-    // マウスの動き
+    // マウスの動作
     float xMouse;
     float yMouse;
 

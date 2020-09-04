@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 
-public class FullScreenOnChenged : MonoBehaviour
+public class SettingsCanvas_FullScreenOnChenged : MonoBehaviour
 {
     // Toggle
     Toggle fullScreenToggle;
@@ -11,14 +11,14 @@ public class FullScreenOnChenged : MonoBehaviour
     {
         // Toggleを取得
         fullScreenToggle = GetComponent<Toggle>();
-        // 画面の状態に合わせてトグルの状態を変更
+        // 画面の状態に合わせてToggleの状態を変更
         if (Screen.fullScreen)
         {
             fullScreenToggle.isOn = true;
         }
     }
 
-    // トグルを変更時の処理
+    // Toggleを変更時の処理
     public void OnChenged()
     {
         // 設定を保存

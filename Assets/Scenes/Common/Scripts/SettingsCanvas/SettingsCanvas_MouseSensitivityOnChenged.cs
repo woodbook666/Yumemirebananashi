@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 
-public class MouseSensitivityOnChenged : MonoBehaviour
+public class SettingsCanvas_MouseSensitivityOnChenged : MonoBehaviour
 {
     // Slider
     Slider mouseSensitivitySlider;
@@ -18,7 +18,7 @@ public class MouseSensitivityOnChenged : MonoBehaviour
         }
     }
 
-    // スライダーを変更時の処理
+    // Sliderを変更時の処理
     public void OnChenged()
     {
         PlayerPrefs.SetFloat("mouseSensitivity", mouseSensitivitySlider.value);

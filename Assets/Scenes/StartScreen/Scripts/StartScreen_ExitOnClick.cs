@@ -1,13 +1,13 @@
 ﻿using UnityEngine;
 
-public class ExitOnClick : MonoBehaviour
+public class StartScreen_ExitOnClick : MonoBehaviour
 {
     // ボタンクリック時の処理
     public void OnClick()
     {
+        // ゲームを終了
         // Todo:フェードアウト
         //
-        // ゲームを終了
         Application.Quit();
     }
 }

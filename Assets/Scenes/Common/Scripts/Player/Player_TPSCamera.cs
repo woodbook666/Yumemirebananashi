@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class TPSCamera : MonoBehaviour
+public class Player_TPSCamera : MonoBehaviour
 {
     // 回転速度(マウスの感度)
     float rotateSpeed;
@@ -9,7 +9,7 @@ public class TPSCamera : MonoBehaviour
 
     // プレイヤーのTransform
     Transform playerTrans;
-    // マウスの動き
+    // マウスの動作
     float xMouse;
     float yMouse;
 
@@ -40,9 +40,8 @@ public class TPSCamera : MonoBehaviour
 
         // マウスホイールの動きを取得
         float mouseWheelMove = Input.GetAxis("Mouse ScrollWheel");
+
         // マウスホイールの動きに合わせてカメラをズーム
         transform.position += playerTrans.forward * mouseWheelMove * zoomSpeed;
-        // Todo:ズームを制限
-        //
     }
 }
